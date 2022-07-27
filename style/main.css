@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+  --primary-desaturated-red: hsl(0, 36%, 70%);
+  --primary-soft-red: hsl(0, 93%, 68%);
+
+  --neutral-dark-grayish-red: hsl(0, 6%, 24%);
+
+  --griadient-one: 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
+  --griadient-two: 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%);
+
+  --main-font-size: 16px;
+
+  --font-family: "Josefin Sans", sans-serif;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-semi-bold: 600;
+}
+html {
+  height: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-image: url(/images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: center;
+}
+.header {
+  position: absolute;
+  top: 0;
+  padding: 8%;
+  width: 100%;
+  height: auto;
+}
+.container {
+  position: relative;
+}
+.container > .image {
+  position: relative;
+  top: 85px;
+  background-image: url(https://eng-skyler.github.io/Fem-Challange-03/images/hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 275px;
+}
+.details {
+  padding: 0 30px;
+  margin-top: 150px;
+}
+.details > h1 {
+  display: inline-block;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  font-weight: var(--font-semi-bold);
+  text-align: center;
+  letter-spacing: 1rem;
+  color: var(--neutral-dark-grayish-red);
+}
+.details > h1 > span {
+  color: var(--primary-desaturated-red);
+  font-weight: var(--font-light);
+}
+.details p {
+  margin-top: 25px;
+  font-family: var(--font-family);
+  line-height: 25px;
+  color: var(--primary-desaturated-red);
+  text-align: center;
+}
+form {
+  position: relative;
+  margin-top: 40px;
+}
+input[type="email"] {
+  padding: 20px;
+  border-radius: 30px;
+  border: 1px solid var(--primary-desaturated-red);
+  width: 100%;
+  font-family: var(--font-family);
+  font-size: 1rem;
+}
+input[type="email"]:focus {
+  outline: none;
+  border: 2px solid var(--primary-desaturated-red);
+}
+input[type="email"]::placeholder {
+  color: var(--primary-desaturated-red);
+}
+/* input[type="email"] + div {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  background: var(--griadient-one);
+  text-align: center;
+} */
+.btn {
+  position: absolute;
+  height: 58px;
+  right: 0;
+  top: 0;
+  width: 21%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 30px;
+  /* border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px; */
+  box-shadow: 0 12px 20px var(--primary-desaturated-red);
+  background: linear-gradient(135deg, rgb(248 191 191), rgb(238 140 140));
+  cursor: pointer;
+  text-align: center;
+}
+.btn:hover {
+  background: var(--primary-desaturated-red);
+}
+.btn svg {
+  width: 30px;
+}
+input[type="email"] + span {
+  display: none;
+  position: absolute;
+  transform: translateY(50%);
+  right: 25%;
+}
+.error-message {
+  display: none;
+  position: absolute;
+  bottom: -30px;
+  left: 30px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  color: var(--primary-soft-red);
+}
+@media (min-width: 800px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .main > .header {
+    margin-left: 60px;
+    height: 33px;
+    padding: 5%;
+    width: 100%;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  .container > .image {
+    position: static;
+    order: 1;
+    background: url(https://eng-skyler.github.io/Fem-Challange-03/images/hero-desktop.jpg);
+    background-size: cover;
+    width: 610px;
+    height: 100%;
+    background-repeat: no-repeat;
+  }
+  .details {
+    padding: inherit;
+    margin: 165px;
+  }
+  .details > h1 {
+    margin: 70px 112px 0 0;
+    font-size: 64px;
+    line-height: 4.3rem;
+    text-align: start;
+    margin-bottom: 20.5px;
+  }
+  .details p {
+    font-size: 1rem;
+    text-align: start;
+    margin-top: 0;
+    letter-spacing: 0.1px;
+    line-height: 1.76rem;
+    margin-right: 44px;
+  }
+  .header {
+    padding: 8%;
+    width: 50%;
+    height: auto;
+  }
+  .form {
+    width: 90%;
+  }
+  .btn {
+    padding: 17.02px 27.2px 15.4px;
+  }
+}
+.attribution {
+  font-family: var(--font-family);
+  position: absolute;
+  bottom: 5px;
+  font-size: 13px;
+  text-align: center;
+  color: var(--primary-desaturated-red);
+  left: 200px;
+}
+.attribution a {
+  text-decoration: none;
+  color: var(--primary-soft-red);
+}
